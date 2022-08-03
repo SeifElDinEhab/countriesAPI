@@ -1,0 +1,84 @@
+// Mobile And Other Screens
+@media only screen and (max-width: 865px) {
+  .top {
+    height: 130px;
+    flex-direction: column;
+    align-items: flex-start;
+    .search {
+      width: 100%;
+    }
+  }
+  .country-details {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    .btn-flag {
+      width: 100%;
+      .flag {
+        width: 100%;
+        align-self: center;
+      }
+    }
+    .country-info-details {
+      width: 100%;
+      align-items: flex-start;
+      margin-top: 20px;
+
+      .borders {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .top {
+    padding: 0;
+  }
+  main {
+    .countries {
+      margin-top: 30px;
+    }
+  }
+  .country-details {
+    .country-info-details {
+      .country-name {
+        padding: 0;
+      }
+      .all-properties {
+        flex-direction: column;
+        .country-properties {
+          width: 100%;
+          padding-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  header {
+    padding: 0 20px;
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  main {
+    padding: 40px 15px;
+    .countries {
+      .country {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+// Country Details Responsive Styling
+
+// @media only screen and (max-width: 700px) {
+
+// }

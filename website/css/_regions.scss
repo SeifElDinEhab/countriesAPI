@@ -1,0 +1,64 @@
+.region-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 200px;
+  height: 50px;
+  font-weight: 300;
+  color: var(--active-text);
+  transition: all 200ms linear;
+  .region-dropdown {
+    width: 100%;
+    min-height: 50px;
+    @include flex-centered();
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-shadow: $shadow;
+    background-color: var(--active-elm);
+    color: var(--active-text);
+    transition: all 200ms linear;
+    ion-icon {
+      transform: rotate(0.5turn);
+      transition: all 200ms linear;
+    }
+
+    .selected {
+      transform: rotate(0turn);
+    }
+  }
+
+  .regions {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--active-elm);
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: $shadow;
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 200ms linear;
+    z-index: 10;
+    li {
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 200ms linear;
+      &:hover {
+        background-color: $hover-gray;
+      }
+    }
+  }
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

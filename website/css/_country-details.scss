@@ -1,0 +1,114 @@
+.country-details {
+  z-index: 100;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--active-bg);
+  color: var(--active-text);
+  padding: 40px 70px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 200ms linear, transform 200ms ease-in-out;
+  .btn-flag {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    .back-btn {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 135px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: var(--active-elm);
+      color: var(--active-text);
+      margin-bottom: 60px;
+      box-shadow: $shadow;
+      transition: all 200ms linear;
+      ion-icon {
+        padding-right: 10px;
+        font-size: 1.45rem;
+      }
+      &:hover {
+        background-color: $hover-gray;
+      }
+    }
+    .flag {
+      width: 85%;
+      box-shadow: $shadow;
+    }
+  }
+  .country-info-details {
+    width: 50%;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 100px;
+    padding: 20px;
+    .country-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      padding-bottom: 25px;
+    }
+    .all-properties {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .country-properties {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 50%;
+        list-style: none;
+        font-weight: 600;
+        font-size: 1rem;
+        li {
+          padding-top: 10px;
+          .info {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .borders {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      font-weight: 600;
+      list-style: none;
+      margin: 60px 0;
+      span {
+        margin-right: 20px;
+      }
+      .border {
+        min-width: 90px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 300;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        background-color: var(--active-elm);
+        padding: 2px 10px;
+        margin: 3px;
+        transition: background-color 200ms linear;
+        &:hover {
+          background-color: $hover-gray;
+        }
+      }
+    }
+  }
+}
+.active-details {
+  transform: scaleX(1);
+}

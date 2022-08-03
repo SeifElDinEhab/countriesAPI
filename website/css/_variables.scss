@@ -1,0 +1,28 @@
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 98%);
+$dark-gray: hsl(0, 0%, 52%);
+$hover-gray: hsla(0, 0%, 85%, 0.3);
+$dark-blue: hsl(209, 23%, 22%);
+$darker-blue: hsl(207, 26%, 17%);
+$very-dark-blue: hsl(200, 15%, 8%);
+$shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 -5px 10px rgba(0, 0, 0, 0.1);
+
+body {
+  --light-bg: hsl(0, 0%, 98%);
+  --light-elm: hsl(0, 0%, 100%);
+  --light-text: hsl(200, 15%, 8%);
+
+  --dark-bg: hsl(207, 26%, 17%);
+  --dark-elm: hsl(209, 23%, 22%);
+  --dark-text: hsl(0, 0%, 100%);
+
+  --active-bg: var(--light-bg);
+  --active-elm: var(--light-elm);
+  --active-text: var(--light-text);
+}

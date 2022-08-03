@@ -1,0 +1,23 @@
+main {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--active-bg);
+  padding: 40px 30px;
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: all 200ms linear, transform 300ms ease-in-out;
+}
+.top {
+  width: 100%;
+  min-height: 50px;
+  overflow: visible;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.not-active {
+  transform: scaleY(0);
+}

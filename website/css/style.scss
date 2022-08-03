@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Overpass:wght@400;700&display=swap");
+@import "variables";
+@import "header";
+@import "main";
+@import "search";
+@import "regions";
+@import "countries";
+@import "country-details";
+@import "responsive";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--active-bg);
+  overflow-x: hidden;
+  transition: background-color 200ms linear;
+}
