@@ -1,6 +1,6 @@
 # RESTCountryAPI Advanced Challenge from frontendmentor.io (https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
-## Technologies Used: HTML, SCSS, JavaScript
+## Technologies Used: HTML, SCSS, JavaScript, API
 
 ##  *Objectives:*
 ### Users should be able to:
