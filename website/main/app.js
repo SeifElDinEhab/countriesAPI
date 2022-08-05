@@ -1,3 +1,9 @@
+// All Code Is Written By https://github.com/SeifElDinEhab
+//#######################################
+// DO NOT USE CODE WITHOUT PERMISSION //
+//#######################################
+
+// Global Variables Used Across The Script
 const baseURL = "https://restcountries.com/v2/all";
 const fragment = document.createDocumentFragment(); //Fragment For All Country Cards
 const fragment2 = document.createDocumentFragment(); //Fragment For All Country Details Pages
@@ -14,7 +20,7 @@ const main = document.querySelector("main");
 let lastX = 0;
 let lastY = 0;
 
-//Check For Dark Mode In Local Storage
+//Check For The Last Dark Mode Setting In Local Storage
 if (window.localStorage.mode) {
   if (window.localStorage.mode === "dark") {
     modeBtn.innerHTML = `<ion-icon name="moon"></ion-icon>Dark Mode`;
@@ -35,14 +41,13 @@ const getAll = async (URL) => {
     const res = await fetch(URL);
     const data = await res.json();
     console.log(data);
-
     return data;
   } catch (error) {
     console.log(error);
   }
 };
 
-//After Getting All Countries, Loop Over Them And Get The Required Data For Each One
+// After Getting All Countries, Loop Over Them And Get The Required Data For Each One
 getAll(baseURL).then((data) => {
   for (let i = 0; i < 250; i++) {
     if (data[i].name === "Israel") {
@@ -55,7 +60,7 @@ getAll(baseURL).then((data) => {
       population: data[i].population,
       region: data[i].region,
       subRegion: data[i].subregion,
-      capital: data[i].capital,
+      capital: undefined ? "No Capital" : data[i].capital,
       currencies: structuredClone(data[i].currencies),
       languages: structuredClone(data[i].languages),
       flag: data[i].flags.png,
@@ -74,6 +79,8 @@ getAll(baseURL).then((data) => {
       countryInfo.currencies.forEach((currency) => {
         currencyInfo.push(currency.name);
       });
+    } else {
+      currencyInfo.push(`No Currency`);
     }
 
     // To Get All Languages
@@ -82,6 +89,8 @@ getAll(baseURL).then((data) => {
       countryInfo.languages.forEach((lang) => {
         langInfo.push(lang.name);
       });
+    } else {
+      langInfo.push(`No Language`);
     }
 
     // Borders Are Given In Alpha3Code So To Get Each Country Name Corresponsing To Each Code I Had To Use The Following Algorithm
@@ -198,11 +207,14 @@ getAll(baseURL).then((data) => {
 function addListeners(allCountries) {
   allCountries.forEach((countryCard) => {
     countryCard.addEventListener("click", () => {
-      // Saving The (X,Y) Distance Scrolled Right After Clicking To Scroll Back To It After Closing Details Page
+      // Saving The (X,Y) Distance Scrolled Right After Clicking The Card, Then Scroll Back To It After Closing Details Page
       lastX = scrollX;
       lastY = scrollY;
       document.querySelectorAll(".country-details").forEach((countryDet) => {
         if (countryDet.getAttribute("data-country-name") === countryCard.id) {
+          // display Property Can Not Be Animated, So I Used setTimeout To Put A Delay
+          // This Is What Happens, not-active Class Is Added To main Then...
+          // The Scale Animation Takes Place Then display Is Set To none Using setTimeout
           countryDet.style.display = "flex";
           main.classList.add("not-active");
           setTimeout(() => {
@@ -216,6 +228,7 @@ function addListeners(allCountries) {
 
   document.querySelectorAll(".back-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
+      // Same Idea Here But In Reverse
       btn.parentElement.parentElement.classList.remove("active-details");
       main.style.display = "block";
       setTimeout(() => {
@@ -227,7 +240,7 @@ function addListeners(allCountries) {
       }, 200);
     });
   });
-
+  // Making Borders In The Details Page Clickable and Able to Navigate To The Selected Country
   document.querySelectorAll(".border").forEach((border) => {
     border.addEventListener("click", () => {
       document.querySelectorAll(".country-details").forEach((e) => {
@@ -248,6 +261,8 @@ function addListeners(allCountries) {
     });
   });
 
+  // Search Bar Checks For Each Country id, If The Search Value Matches..
+  // a String In a Country's id It Is Shown
   searchBar.addEventListener("search", () => {
     allCountries.forEach((countryCard) => {
       countryCard.classList.remove("visible-country");
@@ -271,13 +286,14 @@ function addListeners(allCountries) {
     });
   });
 
+  // Function To Toggle The visible and selected Classes In The Region Selector
   function toggleSelect() {
     dropDown.classList.toggle("selected");
     regionsList.classList.toggle("visible");
   }
-
   regionDropdown.addEventListener("click", toggleSelect);
 
+  // Same Idea As The Search But This Time We Check The data-region Attribute In Each Card
   regionItems.forEach((item) => {
     item.addEventListener("click", toggleSelect);
 
@@ -303,6 +319,7 @@ function addListeners(allCountries) {
     });
   });
 
+  // Checking For The Current Mode Then Changing To dark If light And Vice Versa
   modeBtn.addEventListener("click", () => {
     if (window.localStorage.mode === "light") {
       window.localStorage.mode = "dark";
