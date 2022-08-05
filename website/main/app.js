@@ -40,7 +40,6 @@ const getAll = async (URL) => {
   try {
     const res = await fetch(URL);
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
