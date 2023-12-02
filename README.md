@@ -1,4 +1,4 @@
-# RESTCountryAPI Advanced Challenge from frontendmentor.io (https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+# countriesAPI Advanced Challenge from frontendmentor.io (https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 ## Technologies Used: HTML, SCSS, JavaScript, API
 
@@ -16,7 +16,7 @@
 #### -Applying the saved Dark Mode setting when a user revisits the website
 #### -Making CSS animations work
 #### -Making a functional search bar
-#### -Manipulating the country data from the API
+#### -Manipulating country data from the API
 
 ## *Challenges Solutions:*
 #### -Checked for screen widths at which the design breaks and fixed the css accordingly using media queries
