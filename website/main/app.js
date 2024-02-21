@@ -1,8 +1,3 @@
-// All Code Is Written By https://github.com/SeifElDinEhab
-//#######################################
-// DO NOT USE CODE WITHOUT PERMISSION //
-//#######################################
-
 // Global Variables Used Across The Script
 const baseURL = "https://restcountries.com/v2/all";
 const fragment = document.createDocumentFragment(); //Fragment For All Country Cards
